@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no, initial-scale=1" />
+	
+<style>
+
+.grid {
+	display: grid;
+	grid-template-areas: 'left right';
+}
+
+.left {
+	grid-area: left;
+}
+
+.right {
+	grid-area: right;
+}
+
+body
+{
+	background-color: #000000;
+}
+	
+</style>
+
+<title>Viewer</title>
+</head>
+<body>
+
+<div class="grid">
+	<div id="pixiview" class="left">
+
+	</div>
+	
+	<div class="right" id="local" style="display: none;">
+		<p style="color: white;">パッケージ選択</p>
+		<input type="file" onchange="comicTool.packageLocalLoad(event)">
+	</div>
+</div>
+
+
+<script type="text/javascript" src="./js/lib/jszip-utils.js"></script>
+<script type="text/javascript" src="./js/lib/jszip.js"></script>
+<script type="text/javascript" src="./js/lib/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="./js/lib/anime.js"></script>
+<script type="text/javascript" src="./js/lib/howler.core.js"></script>
+<script type="text/javascript" src="./js/lib/pixi.js"></script>
+<script type="text/javascript" src="./js/lib/pixi-layers.js"></script>
+<script type="text/javascript" src="./js/lib/pixi-spine.js"></script>
+<script type="text/javascript" src="./js/lib/sha256.js"></script>
+
+<script type="text/javascript" src="./js/Adv/lib/container.js"></script>
+<script type="text/javascript" src="./js/Adv/lib/SpineManager.js"></script>
+<script type="text/javascript" src="./js/Adv/lib/ImageManager.js"></script>
+<script type="text/javascript" src="./js/Adv/lib/SoundManager.js"></script>
+<script type="text/javascript" src="./js/Adv/lib/VideoManager.js"></script>
+<script type="text/javascript" src="./js/Adv/Rain.js"></script>
+<script type="text/javascript" src="./js/Adv/Blossoms.js"></script>
+<script type="text/javascript" src="./js/Adv/Snow.js"></script>
+<script type="text/javascript" src="./js/Adv/Advlib.js"></script>
+<script type="text/javascript" src="./js/Adv/AdvTag.js"></script>
+<script type="text/javascript" src="./js/Adv/AdvModule.js"></script>
+<script type="text/javascript" src="./js/Adv/AdvCore.js"></script>
+<script type="text/javascript" src="./js/comic-tool.js"></script>
+
+<script>
+	comicTool.init({target: document.getElementById("pixiview")});
+	comicTool.packageLoad("./resource/STK.data");
+</script>
+</body>
+</html>
+
