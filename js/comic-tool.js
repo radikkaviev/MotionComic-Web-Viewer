@@ -282,10 +282,11 @@ tool.prototype.packageLocalLoad = function (evt) {
 }
 
 tool.prototype.packageLoad = function (path) {
-    if (location.protocol === "file:") {
-        document.getElementById("local").style.display = "";
-        return;
-    }
+    document.getElementById("local").style.display = "";
+    // if (location.protocol === "file:") {
+    //     document.getElementById("local").style.display = "";
+    //     return;
+    // }
 
     var that = this;
     var xhr = new XMLHttpRequest();
